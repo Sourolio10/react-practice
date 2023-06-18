@@ -34,10 +34,21 @@ function App() {
       </header>
       <ul id="concepts">
         <li className="concept">
-          <img src="TODO: IMAGE" alt="TODO: TITLE" />
-          <h2>TODO: TITLE</h2>
-          <p>TODO: DESCRIPTION</p>
+          <img src={concepts[0].image} alt="TODO: TITLE" />
+          <h2>{concepts[0].title}</h2>
+          <p>{concepts[0].description}</p>
         </li>
+        <li className="concept">
+          <img src={concepts[1].image} alt="TODO: TITLE" />
+          <h2>{concepts[1].title}</h2>
+          <p>{concepts[1].description}</p>
+        </li>
+        <li className="concept">
+          <img src={concepts[2].image} alt="TODO: TITLE" />
+          <h2>{concepts[2].title}</h2>
+          <p>{concepts[2].description}</p>
+        </li>
+        
       </ul>
     </div>
   );
