@@ -6,18 +6,19 @@ import ExpensesFilter from './ExpensesFilter';
 
 function Expenses(props) {
   const [filteredYear, selfFilteredYear] = useState('2020');
-  const [filterInfoText, setfFilterInfoText] = useState('2019, 2021 & 2022')
+  let filterInfoText = '2019, 2021 & 2022';
+  if (filteredYear === '2019'){
+    filterInfoText ='2020, 2021 & 2022';
+  }
+  else if (filteredYear === '2021'){
+    filterInfoText ='2019, 2020 & 2022';
+  }
+  else{
+    filterInfoText ='2019, 2020 & 2021';
+  }
+  
   const filterChangeHandler = selectedYear =>{
     selfFilteredYear(selectedYear);
-    if (selectedYear === '2019'){
-      setfFilterInfoText('2020, 2021 & 2022')
-    }
-    else if (selectedYear === '2021'){
-      setfFilterInfoText('2019, 2020 & 2022')
-    }
-    else{
-      setfFilterInfoText('2019, 2020 & 2021')
-    }
 };
 
   return (
