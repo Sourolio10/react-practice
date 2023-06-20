@@ -6,8 +6,18 @@ import ExpensesFilter from './ExpensesFilter';
 
 function Expenses(props) {
   const [filteredYear, selfFilteredYear] = useState('2020');
+  const [filterInfoText, setfFilterInfoText] = useState('2019, 2021 & 2022')
   const filterChangeHandler = selectedYear =>{
     selfFilteredYear(selectedYear);
+    if (selectedYear === '2019'){
+      setfFilterInfoText('2020, 2021 & 2022')
+    }
+    else if (selectedYear === '2021'){
+      setfFilterInfoText('2019, 2020 & 2022')
+    }
+    else{
+      setfFilterInfoText('2019, 2020 & 2021')
+    }
 };
 
   return (
@@ -16,7 +26,8 @@ function Expenses(props) {
    
 
     <Card className="expenses">
-    <ExpensesFilter selected = {filteredYear} onChangefilter={filterChangeHandler}/>
+    <ExpensesFilter selected = {filteredYear} onChangeFilter={filterChangeHandler}/>
+      <p>Data for years {filterInfoText} is hidden.</p>
       <ExpenseItem
         title={props.items[0].title}
         amount={props.items[0].amount}
