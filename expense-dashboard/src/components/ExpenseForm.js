@@ -38,6 +38,16 @@ function ExpenseForm() {
        
     };
 
+    // const inputChangeHandler = (indentifier, value) => {
+    //     if (indentifier === 'title'){
+    //         setEnteredDate(value);
+    //     } else if (indentifier === 'date'){
+    //         setEnteredDate(value);
+    //     } else{
+    //         setEnteredAmount(value)
+    //     }
+    // }
+
     return ( 
         <form>
         <div className='new-expense__controls'>
