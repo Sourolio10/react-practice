@@ -1,2 +1,2 @@
 # Expense-Tracker
-![Alt text]('imgs/expense-tracker.png)
+![Alt text](https://github.com/Sourolio10/react-practice/blob/main/imgs/expense-tracker.png)
