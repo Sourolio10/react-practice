@@ -1,2 +1,2 @@
 # Expense-Tracker
-![Alt text](image link)
+![Alt text]('imgs/expense-tracker.png)
