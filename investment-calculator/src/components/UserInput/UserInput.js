@@ -7,16 +7,25 @@ function UserInput() {
     const resetHandler = () => {
 
     }
+
+    const inputchangeHandler = (input, value) => {
+
+    }
     return (
         <form onSubmit={submitHandler} className="form">
             <div className="input-group">
                 <p>
                     <label htmlFor="current-savings">Current Savings ($)</label>
-                    <input type="number" id="current-savings" />
+                    <input
+                        onChange={(event) =>
+                            inputchangeHandler('current-savings', event.target.value)
+                        } type="number" id="current-savings" />
                 </p>
                 <p>
                     <label htmlFor="yearly-contribution">Yearly Savings ($)</label>
-                    <input type="number" id="yearly-contribution" />
+                    <input onChange={(event) =>
+                        inputchangeHandler('yearly-contribution', event.target.value)
+                    } type="number" id="yearly-contribution" />
                 </p>
             </div>
             <div className="input-group">
@@ -24,11 +33,15 @@ function UserInput() {
                     <label htmlFor="expected-return">
                         Expected Interest (%, per year)
                     </label>
-                    <input type="number" id="expected-return" />
+                    <input onChange={(event) =>
+                        inputchangeHandler('expected-return', event.target.value)
+                    } type="number" id="expected-return" />
                 </p>
                 <p>
                     <label htmlFor="duration">Investment Duration (years)</label>
-                    <input type="number" id="duration" />
+                    <input onChange={(event) =>
+                        inputchangeHandler('duration', event.target.value)
+                    } type="number" id="duration" />
                 </p>
             </div>
             <p className="actions">
