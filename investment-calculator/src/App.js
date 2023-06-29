@@ -8,10 +8,8 @@ function App() {
   const calculateHandler = (userInput) => {
     setUSerInput(userInput)
   };
+  const yearlyData = [];
   if (userInput) {
-
-    const yearlyData = []; // per-year results
-
     let currentSavings = +userInput['current-savings']; // feel free to change the shape of this input object!
     const yearlyContribution = +userInput['yearly-contribution']; // as mentioned: feel free to change the shape...
     const expectedReturn = +userInput['expected-return'] / 100;
@@ -22,7 +20,6 @@ function App() {
       const yearlyInterest = currentSavings * expectedReturn;
       currentSavings += yearlyInterest + yearlyContribution;
       yearlyData.push({
-        // feel free to change the shape of the data pushed to the array!
         year: i + 1,
         yearlyInterest: yearlyInterest,
         savingsEndOfYear: currentSavings,
@@ -36,8 +33,8 @@ function App() {
       <Header />
 
       <UserInput onCalculate={calculateHandler} />
-
-      <ResultsTable />
+      {!userInput && <p>No investment calculated yet.</p>}
+      {userInput && <ResultsTable data={yearlyData} initialInvestment={userInput['current-savings']}/>}
     </div>
   );
 }
